@@ -35,6 +35,9 @@ tslaPred = pd.read_csv('Dataset/TSLA.csv',parse_dates=[0])
 amdPred.columns = [x.strip() for x in amdPred.columns]
 amdPred.columns = [x.replace(' ', '_') for x in amdPred.columns]
 #这个地方直接通过shift算结果，但是你说的方法是对的，就是不应该这样写，RF还是主要用作分类
+def valid(col):
+    return 'Date' not in col
+amdPred = amdPred.dropna()
 X = amdPred[[x for x in amdPred.columns if valid(x)]].iloc[:-20]
 y = amdPred.Close.shift(-20).dropna()
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
