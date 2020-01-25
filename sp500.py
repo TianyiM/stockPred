@@ -23,14 +23,7 @@ def save_sp500_tickers(file_name='sp500-tickers.txt'):
     f.close()
     return 
 
-
-#sp500ticker=save_sp500_tickers()
-#myfile = open('sp500_tickers.txt','w')
-#for el in sp500ticker:
-#    myfile.write(el)
-#myfile.close()
-
-# save_sp500_tickers()
+#get historical data from yahoo api
 def get_data_from_yahoo(reload_sp500=False):
     if reload_sp500:
         tickers = save_sp500_tickers()
