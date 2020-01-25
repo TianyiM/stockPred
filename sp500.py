@@ -1,3 +1,8 @@
+#this script is based on code in the following website
+#https://pythonprogramming.net/sp500-company-price-data-python-programming-for-finance/?completed=/sp500-company-list-python-programming-for-finance/
+#modifer: Hao-Lin Li
+
+
 import bs4 as bs
 import datetime as dt
 import os
